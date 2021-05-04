@@ -1,0 +1,311 @@
+// IMPORT FONTS
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+// IMPORTS FILES
+@import "./Components/order";
+@import "./Components/variables";
+// START STYLING *
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+// FUNCTIONs
+@mixin displayed($pos) {
+  display: flex;
+  justify-content: $pos;
+  align-items: center;
+  line-height: inherit;
+}
+
+@mixin fonts($fnt, $wgt, $sz) {
+  font-family: $fnt !important;
+  font-size: $sz;
+  font-weight: $wgt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin button($padd, $bg) {
+  padding: $padd;
+  outline: none;
+  border: none;
+  border-radius: 24px;
+  background: $bg;
+}
+
+// GLOABL CSS
+.navbar {
+  padding: 0;
+
+  .bx-grid-alt {
+    color: #fff;
+    font-size: 25px;
+  }
+
+  .navbar-nav > .nav-link {
+    @include fonts($rajdhani, 500, 16px);
+    color: #fff;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.3) !important;
+    }
+  }
+}
+
+// START STYLING MAIN SECTION
+.l-home {
+  min-height: 100vh;
+  width: 100vw;
+  .hero__section {
+    width: 100%;
+    min-height: 100vh;
+    background: $banner-bg;
+    position: relative;
+
+    .banner__area {
+      height: 50vh;
+      @include displayed(start);
+
+      .banner__content {
+        padding: 1.5rem;
+
+        h2 {
+          @include fonts($popins, 400, 21px);
+          line-height: 40px;
+          text-transform: none !important;
+          color: #fff;
+        }
+
+        .order-btn {
+          @include button(10px 35px, $btns-bg);
+          margin-top: 1rem;
+          position: relative;
+          overflow: hidden;
+          @include displayed(center);
+          margin-top: 0.5rem;
+
+          a {
+            @include fonts($rajdhani, 300, 14px);
+            @include displayed(center);
+            color: #fff;
+            text-decoration: none;
+            .bx-right-arrow-alt {
+              color: #fff;
+              font-size: 25px;
+              margin-left: 0.4rem;
+            }
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              120deg,
+              transparent,
+              rgba(255, 255, 255, 0.3),
+              transparent
+            );
+            transition: 0.6s ease-in-out;
+          }
+          &:hover:before {
+            left: 100%;
+          }
+        }
+      }
+
+      .img__holder {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        .mode1 {
+          transform: scale(1);
+        }
+        .mode2 {
+          transform: scale(1.9);
+        }
+        .mode3 {
+          transform: scale(1);
+        }
+      }
+    }
+    svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /*--- PRODUCTS AREA ----*/
+    .products__area {
+      height: 15rem;
+      @include displayed(center);
+
+      .product__box {
+        margin: 0 auto;
+        padding: 0.5rem;
+        width: 200px;
+        height: 200px;
+        background: $cards-bg;
+        border-radius: 35px;
+        overflow: hidden;
+        position: relative;
+
+        &:hover .wall {
+          bottom: 0;
+        }
+
+        &:before {
+          content: "";
+          transition: 0.4s ease-in-out;
+          position: absolute;
+          top: 0;
+          left: -100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+
+        &:hover:before {
+          left: 100%;
+        }
+
+        .card__img {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: 0.3s ease-in-out;
+          }
+        }
+
+        .product__btn {
+          position: absolute;
+          bottom: 0;
+          left: -10%;
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          background: $btns-bg;
+        }
+
+        .wall {
+          position: absolute;
+          bottom: -100%;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          @include displayed(center);
+          transition: 0.3s ease-in-out;
+
+          .cart__btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 100%;
+            background: $btns-bg;
+            @include displayed(center);
+            cursor: pointer;
+            .bx {
+              font-size: 25px;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*----- RESPONSIVE: Mobile(360px) View  Port -----*/
+@media only screen and (max-width: 360px) {
+  .row-mobile {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .banner__area {
+    min-height: 100vh;
+  }
+  .banner__area .banner__content {
+    padding: 0px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .order-btn {
+    margin: 0 auto;
+  }
+
+  .box-1,
+  .box2,
+  .box3 {
+    margin-right: 5rem;
+  }
+
+  .col-box {
+    margin-bottom: 1.5rem;
+  }
+
+  .products__area {
+    min-height: 100vh;
+    margin-bottom: 2.5rem;
+  }
+
+  /*.navbar-collapse {
+    display: none !important;
+    visibility: none !important;
+  }*/
+}
+
+/*----- STYLING FOOTER SECTION ------*/
+footer {
+  width: 100%;
+  height: 3.5rem;
+  background: $banner-bg;
+  margin: auto;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  @include displayed(center);
+  .footer__content {
+    padding: 0.5rem;
+    text-align: center;
+    .footer__copy {
+      @include fonts($rajdhani, 500, 16px);
+      color: #fff;
+    }
+  }
+}
