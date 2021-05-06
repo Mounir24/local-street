@@ -71,6 +71,7 @@ app.post('/api/new-order', async (req, res) => {
       <th scope="col">Address</th>
       <th scope="col">Phone</th>
       <th scope="col">Quantity</th>
+      <th scope="col">Size</th>
       <th scope="col">Type</th>
     </tr>
   </thead>
@@ -80,6 +81,7 @@ app.post('/api/new-order', async (req, res) => {
       <td>${info.email}</td>
       <td>${info.address}</td>
       <td>${info.phone}</td>
+      <td>${info.size}</td>
       <td>${info.quantity}</td>
       <td>${info.productType}</td>
     </tr>
