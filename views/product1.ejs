@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,43 +16,81 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <!-- OWN CSS FILE -->
     <link rel="stylesheet" href="./CSS/global.css">
-    <title>Loco Street -- Product Order</title>
+    <title>Loco Street -- Hoodie Verso</title>
 </head>
+
 <body>
     <div class="container-fluid l-home m-0 p-0">
         <div class="hero__section order__section">
             <nav class="navbar navbar-expand-md navbar-light px-5">
-                <a class="navbar-brand" href="index.html">
-                    <img src="./Assets/Imgs/Logo Rouge.png" alt="Loco Street" class="img-fluid" height="60" width="60">
+                <a class="navbar-brand" href="/">
+                    <img src="/Assets/Imgs/Logo Rouge.png" alt="Loco Street" class="img-fluid" height="60" width="60">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <i class='bx bx-grid-alt'></i>
                 </button>
                 <div class="collapse navbar-collapse d-flex justify-content-center align-items-center " id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="#">Contact us</a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </div>
+                </div>
+                <div class="sci__area">
+                    <a href="https://www.facebook.com/LOCO.STREET.MAROC/" target="_blank">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
                 </div>
             </nav>
 
             <!-- ORDER AREA AREA -->
-            <div class="container order__area">
+            <div class="container-fluid order__area">
                 <div class="row w-100 mx-auto">
-                    <div class="col-md-6 col-sm-12 col-xs-12 center">
+                    <div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 center d-flex justify-content-center align-items-center flex-column">
                         <div class="product_preview" data-tilt>
                             <div class="img__holder">
-                                <img src="./Assets/Imgs/Module 1-2-3 Verso.png" alt="Hoodie - Loco Street" class="img-fluid">
+                                <img src="Assets/Imgs/Module (1).png" alt="Hoodie - Loco Street" class="img-fluid img__prev">
                             </div>
+                            <h2 class="card__label">wydad logo verso hoddie</h2>
+                        </div>
+                        <!-- List Product Preview -->
+                        <div class="products__controllers">
+                        <ul class="products-list">
+                            <il class="product-preview">
+                                <img src="/Assets/Imgs/Module (1).png" alt="Product 1" class="img-fluid"
+                                    onclick="swipImg('/Assets/Imgs/Module (1).png')">
+                            </il>
+                            <il class="product-preview">
+                                <img src="/Assets/Imgs/Module (2).png" alt="Product 2" class="img-fluid"
+                                    onclick="swipImg('/Assets/Imgs/Module (2).png')">
+                            </il>
+                            <il class="product-preview">
+                                <img src="/Assets/Imgs/Module 1-2-3 Verso.png" alt="Product 3" class="img-fluid"
+                                    onclick="swipImg('/Assets/Imgs/Module 1-2-3 Verso.png')">
+                            </il>
+                            <li class="product-preview" id="one">
+                                <img src="/Assets/Imgs/Module Sans verso.png" alt="Product 4" class="img-fluid"
+                                    onclick="swipImg('/Assets/Imgs/Module Sans verso.png')">
+                            </li>
+                        </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-lg-6 col-xs-12">
                         <div class="form__wrapper">
-                            <h3 class="form__label">Wydad Athletics Club 2021 Hoddie</h3>
-                            <form class="mt-3 p-4" name="google-sheet">
+                            <!--<h3 class="form__label">Wydad Athletics Club 2021 Hoddie</h3>-->
+                            <form action="/api/new-order" method="POST" class="mt-3 p-4" name="google-sheet" id="form_order">
+                                <!-- PRODUCT TYPE -->
+                                <div class="form-row mb-3">
+                                    <label for="productsType">Product Type:</label>
+                                    <select class="custom-select  select-dropdown" name="productType" id="productsType">
+                                        <option selected>Product Type:</option>
+                                        <option value="wydad logo verso hoddie">wydad logo verso hoddie</option>
+                                        <option value="wydad the king verso hoddie">wydad the king verso hoddie</option>
+                                        <option value="wydad logo recto hoddie">wydad logo recto hoddie</option>
+                                        <option value="on/off recto hoddie">on/off recto hoddie</option>
+                                        </select>
+                                    </select>
+                                </div>
                                 <!-- QUANITITY-->
-                                <div class="form-row w-100 mx-auto">
+                                <div class="form-row w-100 mx-auto mt-3">
                                     <div class="col-md-12 w-50 mx-auto">
                                         <label for="quantity">Quantity:</label>
                                         <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Quantity Ex: 5" required>
@@ -60,7 +99,7 @@
                                 <!-- ROW 1 -->
                                 <div class="form-row mt-3">
                                     <div class="col-md-6">
-                                          <label for="firstName">First Name:</label>
+                                        <label for="firstName">First Name:</label>
                                         <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Your First Name" required>
                                     </div>
                                     <div class="col-md-6">
@@ -79,7 +118,7 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <label for="email">E-mail:</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Your E-mail Address" required>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your E-mail Address" required>
                                 </div>
                                 <button type="submit" class="btn order-btn">
                                     Order Now
@@ -101,30 +140,31 @@
     <footer>
         <div class="footer__content">
             <p class="footer__copy my-auto">
-                All Rights Reserved By Loco Street --
-                <script>document.write(new Date().getFullYear())</script>
+                Tous droits réservés par Loco Street --
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
             </p>
         </div>
     </footer>
 
     <script>
         // GOOGLE SHEET INITIALIZE 
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbxSBXwK08VSlBTQHfFLoNZAVjWHlvju7xhfjb0icm_kRa-EzKuYHBFmB5fPMx_Fcbsffw/exec';
-            const form = document.forms['google-sheet'];
+        /*const scriptUrl = 'https://script.google.com/macros/s/AKfycbwDq34tzwzk_RzmH1kdkD46gcEK9ArZrY3OIvaTit4KNtEgV1SK/exec';
+        const form = document.forms['google-sheet'];
 
-            console.log(form);
+        console.log(new FormData(form));
 
-
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                fetch(scriptUrl, { method: 'POST', headers: {'Origin': 'script.google.com'}, body: new FormData(form) })
-                    .then(response => {
-                        alert('Thanks For Contacting Us! We will Responde Later!')
-                        console.log(response);
-                    }).catch(err => {
-                        alert(err.message);
-                    })
-            })
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            fetch(scriptUrl, { method: 'POST',body: new FormData(form) })
+                .then(response => {
+                    alert('Thanks For Contacting Us! We will Responde Later!')
+                    console.log(response);
+                }).catch(err => {
+                    alert(err.message);
+                })
+        })*/
     </script>
     <!-- BOOTSTRAP 4 JS (CDN) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -137,6 +177,7 @@
     <!-- TIDIO CHAT (CDN) -->
     <script src="//code.tidio.co/hmjtp0a1poe9vsjd7xqkvokuapduib3f.js" async></script>
     <!-- OWN JS FILE -->
-    <script src="./JS/main.js"></script>
+    <script src="/JS/main.js"></script>
 </body>
+
 </html>

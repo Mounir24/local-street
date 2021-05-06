@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 /*---- TYPOGRAPHY ----*/
 /*-----  COLORS ----*/
 .center {
@@ -18,10 +19,11 @@
 .order__section {
   min-height: 90vh !important;
   position: relative;
+  width: 100%;
 }
 
 .order__area {
-  height: 50vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +36,7 @@
   line-height: inherit;
   margin: 0 1.5rem;
   position: absolute;
-  bottom: 10%;
+  bottom: -15%;
   z-index: 99;
   /*--- STYLING FORM ----*/
 }
@@ -85,6 +87,61 @@
      object-fit: cover;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
+}
+
+.order__area .product_preview .card__label {
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 18px;
+  font-family: Zen Dots, cursive;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.order__area .products__controllers {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.order__area .products__controllers .products-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+  list-style: none;
+}
+
+.order__area .products__controllers .products-list .product-preview {
+  width: 70px;
+  height: 70px;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.order__area .products__controllers .products-list .product-preview:hover {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+}
+
+.order__area .products__controllers .products-list .product-preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .order__area .form__wrapper {
@@ -142,6 +199,19 @@
   text-transform: uppercase;
 }
 
+.order__area .form__wrapper select {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+  background: #cfdbd5;
+  font-family: "Rajdhani", sans-serif !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .order__area .form__wrapper label {
   font-family: "Rajdhani", sans-serif !important;
   font-size: 15px;
@@ -172,7 +242,7 @@
   margin: 0 auto;
   font-family: "Rajdhani", sans-serif !important;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #fff;
@@ -231,6 +301,81 @@
 
 /*---- TYPOGRAPHY ----*/
 /*-----  COLORS ----*/
+/*---- TYPOGRAPHY ----*/
+/*-----  COLORS ----*/
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+}
+
+.row-wide {
+  width: 50%;
+}
+
+.confirmation__box {
+  width: 100%;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.confirmation__box .confirmation__content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.confirmation__box .confirmation__content .logo__wrapper {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.confirmation__box .confirmation__content .logo__wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.confirmation__box .confirmation__content h2 {
+  font-family: "Zen Dots", cursive !important;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 50px;
+}
+
+@media only screen and (max-width: 360px) {
+  .row-wide {
+    width: 100%;
+  }
+  .confirmation__box {
+    margin-top: 5.5rem;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -247,6 +392,7 @@ body {
 
 .navbar {
   padding: 0;
+  z-index: 999;
 }
 
 .navbar .bx-grid-alt {
@@ -267,6 +413,33 @@ body {
 
 .navbar .navbar-nav > .nav-link:hover {
   color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.navbar .sci__area {
+  margin-right: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background: #2f3031;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+}
+
+.navbar .sci__area a {
+  text-decoration: none;
+}
+
+.navbar .sci__area a .bxl-facebook {
+  font-size: 21px;
+  color: #fff;
 }
 
 .l-home {
@@ -301,7 +474,7 @@ body {
 }
 
 .l-home .hero__section .banner__area .banner__content h2 {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Zen Dots", cursive !important;
   font-size: 21px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -335,8 +508,8 @@ body {
 
 .l-home .hero__section .banner__area .banner__content .order-btn a {
   font-family: "Rajdhani", sans-serif !important;
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
   display: -webkit-box;

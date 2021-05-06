@@ -1,0 +1,79 @@
+// IMPORTS FILES
+@import "../Components/variables";
+// START STYLING ORDER PAGE
+// FUNCTIONs
+@mixin displayed($pos) {
+  display: flex;
+  justify-content: $pos;
+  align-items: center;
+  line-height: inherit;
+}
+
+@mixin fonts($fnt, $wgt, $sz) {
+  font-family: $fnt !important;
+  font-size: $sz;
+  font-weight: $wgt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin button($padd, $bg) {
+  padding: $padd;
+  outline: none;
+  border: none;
+  border-radius: 24px;
+  background: $bg;
+}
+
+// GLOBAL CSS
+.center {
+  @include displayed(center);
+}
+
+.row-wide {
+  width: 50%;
+}
+
+// STYLING CONFIRMATION PAGE
+.confirmation__box {
+  width: 100%;
+  height: 350px;
+  @include displayed(center);
+  margin: 0 auto;
+  text-align: center;
+
+  .confirmation__content {
+    padding: 1.5rem;
+    text-align: center;
+
+    .logo__wrapper {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto;
+      margin-bottom: 1.5rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h2 {
+      @include fonts($zenDots, 400, 25px);
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 50px;
+    }
+  }
+}
+
+// RESPONSIVE: Mobile View Port (360px)
+@media only screen and(max-width: 360px) {
+  .row-wide {
+    width: 100%;
+  }
+
+  .confirmation__box {
+    margin-top: 5.5rem;
+  }
+}

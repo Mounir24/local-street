@@ -1,20 +1,10 @@
-// SLICK CAROUSEL ANIMATIOIN
-/*$(".products_preview").slick({
-    infinite: true,
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 3,
-    centerMode: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    responsive: [{
-        breakpoint: 360,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        },
-    },],
-});*/
+
+
+
+// APPEAR PRODUCTS IMAGES 
+function swipImg(pic) {
+    document.querySelector('.img__prev').src = pic;
+}
 
 
 
