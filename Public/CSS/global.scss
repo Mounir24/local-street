@@ -1,33 +1,26 @@
-// IMPORT FONTS
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
-// IMPORTS FILES
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap);
 @import "./Components/order";
 @import "./Components/variables";
 @import "./Components/confirmation";
-// START STYLING *
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
   width: 100%;
   min-height: 100%;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
-
-// FUNCTIONs
 @mixin displayed($pos) {
   display: flex;
   justify-content: $pos;
   align-items: center;
   line-height: inherit;
 }
-
 @mixin fonts($fnt, $wgt, $sz) {
   font-family: $fnt !important;
   font-size: $sz;
@@ -35,7 +28,6 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
 @mixin button($padd, $bg) {
   padding: $padd;
   outline: none;
@@ -43,8 +35,6 @@ body {
   border-radius: 24px;
   background: $bg;
 }
-
-// GLOABL CSS
 .navbar {
   padding: 0;
   z-index: 999;
@@ -76,8 +66,6 @@ body {
     }
   }
 }
-
-// START STYLING MAIN SECTION
 .l-home {
   min-height: 100vh;
   width: 100vw;
@@ -163,7 +151,6 @@ body {
       left: 0;
       width: 100%;
     }
-    /*--- PRODUCTS AREA ----*/
     .products__area {
       height: 15rem;
       @include displayed(center);
@@ -245,9 +232,6 @@ body {
     }
   }
 }
-
-/*----- RESPONSIVE: Mobile(360px) View  Port -----*/
-
 @media only screen and (max-width: 360px) {
   .row-mobile {
     flex-direction: row;
@@ -257,7 +241,7 @@ body {
     min-height: 100vh;
   }
   .banner__area .banner__content {
-    padding: 0px;
+    padding: 0;
     text-align: center;
     margin-bottom: 1.5rem;
   }
@@ -276,14 +260,7 @@ body {
     min-height: 100vh;
     margin-bottom: 2.5rem;
   }
-  /*.navbar-collapse {
-    display: none !important;
-    visibility: none !important;
-  }*/
 }
-
-/*----- STYLING FOOTER SECTION ------*/
-
 footer {
   width: 100%;
   height: 3.5rem;
