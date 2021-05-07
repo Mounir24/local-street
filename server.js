@@ -48,19 +48,20 @@ app.get('/confirmation', (req, res) => {
 app.post('/api/new-order', async (req, res) => {
     // CATCH DATA FROM REQUEST OBJECT
     const info = req.body;
+    console.log(info)
     try {
         // Node mailer function
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: process.env.PRIMARY_EMAIL,
-                pass: process.env.PRIMARY_PASS
+                user: 'M.brtouli997@gmail.com',
+                pass: 'Jm2tpu@@@USA53212240'
             }
         });
 
         const mailOptions = {
-            from: process.env.PRIMARY_EMAIL,
-            to: process.env.SECONDARY_EMAIL,
+            from: 'M.brtouli997@gmail.com',
+            to: info.email,
             subject: `Loco Street: New Order From ${info.firstName}`,
             html: `
             <table style="width: 100%">
@@ -81,8 +82,8 @@ app.post('/api/new-order', async (req, res) => {
       <td>${info.email}</td>
       <td>${info.address}</td>
       <td>${info.phone}</td>
-      <td>${info.size}</td>
       <td>${info.quantity}</td>
+      <td>${info.productSize}</td>
       <td>${info.productType}</td>
     </tr>
   </tbody>

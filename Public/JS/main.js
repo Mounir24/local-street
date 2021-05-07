@@ -1,2 +1,7 @@
 function swipImg(pic) { document.querySelector('.img__prev').src = pic }
 ScrollReveal().reveal(".banner__content", { reset: !0, distance: "120px", duration: 1000, origin: "top", interval: 200, }); ScrollReveal().reveal(".mode1", { reset: !0, distance: "120px", duration: 1000, origin: "right", interval: 300, }); ScrollReveal().reveal(".mode2", { reset: !0, distance: "120px", duration: 1000, origin: "top", interval: 450, }); ScrollReveal().reveal(".mode3", { reset: !0, distance: "120px", duration: 1000, origin: "left", interval: 400, }); ScrollReveal().reveal(".box1", { reset: !0, distance: "120px", duration: 1000, origin: "left", interval: 400, }); ScrollReveal().reveal(".box2", { reset: !0, distance: "120px", duration: 1000, origin: "top", interval: 460, }); ScrollReveal().reveal(".box3", { reset: !0, distance: "120px", duration: 1000, origin: "right", interval: 540, }); ScrollReveal().reveal(".form__wrapper", { reset: !0, distance: "120px", duration: 1000, origin: "right", interval: 320, }); ScrollReveal().reveal(".product_preview", { reset: !0, distance: "120px", duration: 1000, origin: "left", interval: 330, })
+// loader Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader-anim');
+    loader.style.display = "none";
+})
