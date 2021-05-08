@@ -53,6 +53,8 @@ app.post('/api/new-order', async (req, res) => {
         // Node mailer function
         const transporter = nodemailer.createTransport({
             service: 'gmail',
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.PRIMARY_EMAIL,
                 pass: process.env.PRIMARY_PASS
