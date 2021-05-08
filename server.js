@@ -54,14 +54,14 @@ app.post('/api/new-order', async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'M.brtouli997@gmail.com',
-                pass: 'Jm2tpu@@@USA53212240'
+                user: process.env.PRIMARY_EMAIL,
+                pass: process.env.PRIMARY_PASS
             }
         });
 
         const mailOptions = {
-            from: 'M.brtouli997@gmail.com',
-            to: info.email,
+            from: process.env.PRIMARY_EMAIL,
+            to: process.env.SECONDARY_EMAIL,
             subject: `Loco Street: New Order From ${info.firstName}`,
             html: `
             <table style="width: 100%">
